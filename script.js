@@ -1,8 +1,16 @@
 //your JS code here. If required.
-funtion delayMessage(){
-	return new promise((resolve,reject)=>{
+function delayMessage(){
+	return new Promise((resolve,reject)=>{
 		setTimeout(()=>{
-			reselove("Hello,world!");
+			resolve("Hello,world!");
 		},1000);
 	})
 }
+delayMessage()
+  .then((message) => {
+    const outputElement = document.getElementById("output");
+    outputElement.textContent = message;
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
